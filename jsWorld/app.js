@@ -157,28 +157,28 @@
 
 // console.log(this)
 
-let a = '190';
-const b = 1;
-if (true) {
-    let a = '200';
-    console.log(a)
+// let a = '190';
+// const b = 1;
+// if (true) {
+//     let a = '200';
+//     console.log(a)
 
-    const b = 2;
-    console.log(b)
-}
+//     const b = 2;
+//     console.log(b)
+// }
 
-function functionA() {
-    console.log('functionA')
-    let a = '200';
-    console.log(a)
+// function functionA() {
+//     console.log('functionA')
+//     let a = '200';
+//     console.log(a)
 
-    const b = 2;
-    console.log(b)
-}
+//     const b = 2;
+//     console.log(b)
+// }
 
-functionA()
-console.log(a)
-console.log(b)
+// functionA()
+// console.log(a)
+// console.log(b)
 //----------------------------------------------------//
 
 //------------------------Class declaration----------------------------//
@@ -224,5 +224,78 @@ console.log(b)
 // var myFunction = Welcome('John');
 // myFunction('Welcome ');
   
+
+//------------------------ Promise ----------------------------//
+
+// const promise = new Promise(resolve => {
+//     setTimeout(() => {
+//       resolve("I'm a Promise!");
+//     }, 5000);
+//   }, reject => {
+  
+//   });
+  
+//   promise.then(value => console.log(value));
+
+
+// //   promise chaining
+//   new Promise(function(resolve, _reject) {
+
+//     setTimeout(() => resolve(1), 1000);
+  
+//   }).then(function(result) {
+  
+//     console.log(result); // 1
+//     return result * 2;
+  
+//   }).then(function(result) {
+  
+//     console.log(result); // 2
+//     return result * 3;
+  
+//   }).then(function(result) {
+  
+//     console.log(result); // 6
+//     return result * 4;
+  
+//   });
+
+// Promise.all
+// const promise1 = new Promise(resolve => setTimeout(() => {
+//     console.log('promise1')
+//     resolve(1)
+// }, 2000));
+// const promise2 = new Promise(resolve => setTimeout(() => {
+//     console.log('promise2')
+//     resolve(2)
+// }, 4000));
+// const promise3 = new Promise((_resolve, reject) => setTimeout(() => reject('Error ja'), 1000));
+
+// Promise.all([promise1, promise2])
+// .then(result => {   
+//     console.log(result) 
+// }).catch(error => console.log(`Error in promises ${error}`))
+
+// Promise.race
+
+var promise1 = new Promise(function(resolve, reject) {
+    setTimeout(() => {
+        console.log('solved one')
+        resolve('one')
+    }, 500);
+});
+var promise2 = new Promise(function(resolve, reject) {
+    setTimeout(() => {
+        console.log('solved two')
+        resolve('two')
+    }, 200);
+});
+
+Promise.race([promise1, promise2]).then(function(value) {
+  console.log(value); // "two" // Both promises will resolve, but promise2 is faster
+});
+
+
+//----------------------------------------------------//
 
 //----------------------------------------------------//
