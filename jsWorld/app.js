@@ -69,3 +69,160 @@
 // console.log('spliceArr6', spliceArr6)
 
 //----------------------------------------------------//
+
+//---------------------------Currying------------------------//
+// const curryUnaryFunction = a => b => c => a + b + c;
+// console.log(curryUnaryFunction)
+// console.log(curryUnaryFunction(1))
+// console.log(curryUnaryFunction(1)(2))
+// console.log(curryUnaryFunction(1)(2)(3))
+
+// const curryUnaryFunction2 = a => b => callback => callback(() => a+b);
+// function callbackFunction2(result) {
+//     return result;
+// }
+
+// const curryUnaryFunction3 = a => b => callback => callback(a+b);
+// function callbackFunction3(result) {
+//     return result;
+// }
+
+// console.log(curryUnaryFunction2(1)(2)(callbackFunction2)())
+// console.log(curryUnaryFunction3(4)(3)(callbackFunction3))
+//----------------------------------------------------//
+
+//------------------------ let, var ----------------------------//
+// var counter = 30;
+
+// function execute() {
+//     var counter = 10;
+//     if (true) {
+//         if (true) {
+//             var counter = 20;
+//             console.log('execute 2 inner', counter)        
+//         }
+//     }
+//     console.log('execute', counter)
+// }
+
+// if (counter === 30) {
+//   let counter = 31;
+//   console.log(counter);
+// }
+
+// console.log(counter);
+// execute()
+// counter = 28;
+// execute();
+// console.log(counter);
+
+// function userDetails(username) {
+//     if(username) {
+//       console.log(salary); // undefined due to hoisting
+//       console.log(age); // ReferenceError: Cannot access 'age' before initialization
+//       let age = 30;
+//       var salary = 10000;
+//     }
+//     console.log(salary); //10000 (accessible to due function scope)
+//     // console.log(age); //error: age is not defined(due to block scope)
+//  }
+//  userDetails('John');
+
+//--------------------- Temporal Dead Zone -------------------------------//
+// var counter = 3;
+// let counter4 = 4;
+// function someMethod() {
+//     console.log(counter1); // undefined
+//     // console.log(counter2); // ReferenceError
+//     // if (true) {
+//     //     console.log(counter2)
+//     // }
+
+//     const functionA = () => console.log(counter2);
+//     function functionB() {
+//         console.log(counter2)
+//     }
+//     // functionA()
+//     // functionB()
+    
+//     var counter1 = 1;
+//     let counter2 = 2;
+//     functionA()
+//     functionB()
+
+//     console.log(this)
+// }
+
+// someMethod();
+
+// console.log(this)
+
+let a = '190';
+const b = 1;
+if (true) {
+    let a = '200';
+    console.log(a)
+
+    const b = 2;
+    console.log(b)
+}
+
+function functionA() {
+    console.log('functionA')
+    let a = '200';
+    console.log(a)
+
+    const b = 2;
+    console.log(b)
+}
+
+functionA()
+console.log(a)
+console.log(b)
+//----------------------------------------------------//
+
+//------------------------Class declaration----------------------------//
+
+// function Bike(model, color) {
+//     this.model = model;
+//     this.color = color;
+// }
+
+// Bike.prototype.getDetails = function() {
+//     return `${this.model} has ${this.color}`
+// }
+
+// const bike = new Bike('Suzuki', 'Red');
+// console.log(bike.getDetails())
+//----------------------------------------------------//
+
+//------------------------ Closures ----------------------------//
+// var age = 20;
+// let nickname = 'Doe';
+// function Welcome(name22){
+
+//     let a = 'a';
+
+//     function WelcomeInner(message){
+//         let b = 'b';
+//         var greetingInfo = function(message) {
+//             let c = 'c';
+//             var greeting = function(message) {
+//                 var d = 'd'
+//                 const functionTest = () => d;
+//                 var greeting2 = function(message) {
+//                     console.log(`${message} ${name22} has ${age} year oldm, his nickname is ${nickname} ${a} ${b} ${c} ${functionTest()}`);
+//                 }
+//                 return greeting2(message);
+//             }
+//             return greeting(message);
+//         }
+//         return greetingInfo(message);
+//     }
+//     return WelcomeInner;
+// }
+// var myFunction = Welcome('John');
+// myFunction('Welcome ');
+  
+
+//----------------------------------------------------//
