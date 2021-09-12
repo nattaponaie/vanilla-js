@@ -17,7 +17,7 @@ function setTemperatureDesc(desc = 'Unknown') {
 function setTemperatureIcon(icon = 'Unknown') {
     const element = document.querySelector('.icon');
     element.src = icon === 'Unknown' ? 
-    'https://www.clipartmax.com/png/small/237-2372176_weather-app-weather-app-logo.png' 
+    'https://icons.iconarchive.com/icons/papirus-team/papirus-apps/96/weather-icon.png' 
     : `http://openweathermap.org/img/wn/${icon}@2x.png`
 }
 

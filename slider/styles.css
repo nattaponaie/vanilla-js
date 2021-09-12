@@ -1,0 +1,83 @@
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #F2F7FE;
+}
+
+.card {
+    width: 30%;
+    border: 1px solid #DEE1E5;
+    border-radius: 6px;
+    padding: 16px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 3px 14px 1px rgba(104,116,123,0.61);
+    -webkit-box-shadow: 0px 3px 14px 1px rgba(104,116,123,0.61);
+    -moz-box-shadow: 0px 3px 14px 1px rgba(104,116,123,0.61);
+}
+
+.title {
+    margin-bottom: 26px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.underline {
+    background-color: #D20222;
+    height: 4px;
+    width: 50%;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 180px;
+    background-color: #D20222;
+    padding: 4px 10px 0 0;
+}
+
+div[class="avatar"] > img {
+    border-radius: inherit;
+    width: 100%;
+    height: 100%;
+}
+
+div[class="profile"] > h2 {
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+}
+
+div[class="profile"] > h5 {
+    color: #D20222;
+    margin: 0;
+}
+
+.description {
+    text-align: center;
+    padding: 8px 30px;
+    margin-bottom: 16px;
+    color: #A1A1A7;
+    font-weight: 400;
+}
+
+button {
+    border: 1px solid #D20222;
+    border-radius: 8px;
+    background-color: #F2F7FE;
+    color: #D20222;
+    padding: 4px;
+}
