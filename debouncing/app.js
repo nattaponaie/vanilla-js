@@ -3,7 +3,7 @@ function search() {
     console.log('search', element.value);
 }
 
-function debouncingSearch(fn, delay) {
+function debounce(fn, delay) {
     let timer;
     return function () {
         clearTimeout(timer);
@@ -13,4 +13,4 @@ function debouncingSearch(fn, delay) {
     }
 }
 
-const fetchData = debouncingSearch(search, 1000)
+const searchDeboucing = debounce(search, 1000)
