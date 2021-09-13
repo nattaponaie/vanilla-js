@@ -278,22 +278,34 @@
 
 // Promise.race
 
-var promise1 = new Promise(function(resolve, reject) {
-    setTimeout(() => {
-        console.log('solved one')
-        resolve('one')
-    }, 500);
-});
-var promise2 = new Promise(function(resolve, reject) {
-    setTimeout(() => {
-        console.log('solved two')
-        resolve('two')
-    }, 200);
-});
+// var promise1 = new Promise(function(resolve, reject) {
+//     setTimeout(() => {
+//         console.log('solved one')
+//         resolve('one')
+//     }, 500);
+// });
+// var promise2 = new Promise(function(resolve, reject) {
+//     setTimeout(() => {
+//         console.log('solved two')
+//         resolve('two')
+//     }, 200);
+// });
 
-Promise.race([promise1, promise2]).then(function(value) {
-  console.log(value); // "two" // Both promises will resolve, but promise2 is faster
-});
+// Promise.race([promise1, promise2]).then(function(value) {
+//   console.log(value); // "two" // Both promises will resolve, but promise2 is faster
+// });
+
+new Promise(resolve => {
+    resolve(1)
+    console.log(2)
+    setTimeout(function timeout() {
+        console.log('Timed out Resolved!');
+    }, 0);
+}).then(result => console.log(result));
+
+setTimeout(function timeout() {
+    console.log('Timed out!');
+}, 0);
 
 
 //----------------------------------------------------//
